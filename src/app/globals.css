@@ -1377,7 +1377,7 @@
   color: #d3cee7;
   line-height: 1.7;
 }
-.final-cta .button {
+.final-cta .button:not(.button-whatsapp) {
   background: white;
   color: var(--violet);
   box-shadow: none;
