@@ -19,7 +19,6 @@ export default function HomePage() {
         <Method />
         <Safety />
         <Pricing />
-        <Instructor />
         <Faq />
         <FinalCta />
       </main>
