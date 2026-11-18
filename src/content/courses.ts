@@ -5,6 +5,7 @@ export type CourseId = "kids" | "teens" | "uni";
 export type Course = {
   id: CourseId;
   anchor: string;
+  page: string;
   quick: { eyebrow: string; title: string; text: string; symbol: string };
   kicker: string;
   kickerTone: "warm" | "cyan" | "navy";
@@ -22,6 +23,7 @@ export const courses: Course[] = [
   {
     id: "kids",
     anchor: "kids",
+    page: "/cursos/kids-scratch-videojuegos",
     quick: { eyebrow: "8–12 años", title: "Kids", text: "Scratch y videojuegos", symbol: "★" },
     kicker: "PROGRAMA KIDS · 8 A 12 AÑOS",
     kickerTone: "warm",
@@ -30,7 +32,7 @@ export const courses: Course[] = [
       "Tu hijo aprenderá la lógica detrás de un videojuego mientras construye una historia que puede jugar y compartir.",
     details: [
       { icon: "calendar", label: "4 semanas" },
-      { icon: "clock", label: "8 sesiones de 1h15" },
+      { icon: "clock", label: "8 sesiones de 1 hora" },
       { icon: "calendar", label: "Sábado y domingo" },
     ],
     outcomesTitle: "LO QUE LOGRARÁ TU HIJO",
@@ -46,15 +48,16 @@ export const courses: Course[] = [
   {
     id: "teens",
     anchor: "teens",
+    page: "/cursos/teens-python-mini-rpg",
     quick: { eyebrow: "13–17 años", title: "Teens", text: "Python y mini-RPG", symbol: "◆" },
     kicker: "PROGRAMA TEENS · 13 A 17 AÑOS",
     kickerTone: "cyan",
     title: "Python desde cero: crea tu mini-RPG",
     summary:
-      "Aprende Python de verdad y úsalo para construir un juego propio. Menos teoría suelta, más código con propósito.",
+      "Tu hijo o hija aprende Python de verdad y lo usa para construir su propio videojuego. Menos teoría suelta, más código con propósito.",
     details: [
       { icon: "calendar", label: "4 semanas" },
-      { icon: "clock", label: "8 sesiones de 1h15" },
+      { icon: "clock", label: "8 sesiones de 1 hora" },
       { icon: "calendar", label: "Sábado y domingo" },
       { icon: "code", label: "Desde cero" },
     ],
@@ -71,6 +74,7 @@ export const courses: Course[] = [
   {
     id: "uni",
     anchor: "universitarios",
+    page: "/cursos/universitarios-logica-algoritmos",
     quick: {
       eyebrow: "Universitarios",
       title: "Universitarios",

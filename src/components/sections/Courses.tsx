@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { courses, type Course } from "@/content/courses";
 
 import { CheckList, WhatsAppButton } from "../Brand";
@@ -14,7 +16,7 @@ export function QuickPrograms() {
   return (
     <section className="quick-programs container" id="programas" aria-label="Programas por edad">
       {courses.map((course) => (
-        <a className={`quick-card ${course.id}`} href={`#${course.anchor}`} key={course.id} data-reveal>
+        <Link className={`quick-card ${course.id}`} href={course.page} key={course.id} data-reveal>
           <div>
             <span className="quick-eyebrow">{course.quick.eyebrow}</span>
             <h2 className="quick-title">{course.quick.title}</h2>
@@ -24,7 +26,7 @@ export function QuickPrograms() {
             </span>
           </div>
           <ProgramArt type={course.id} symbol={course.quick.symbol} />
-        </a>
+        </Link>
       ))}
     </section>
   );
@@ -56,13 +58,21 @@ function CourseCopy({ course }: { course: Course }) {
       )}
       {course.extraLanguages && (
         <div className="language-box">
-          <b>También: clases particulares</b>
+          <Link className="language-link" href="/clases-particulares-programacion">
+            También: clases particulares
+          </Link>
           {course.extraLanguages.map((language) => (
             <span key={language}>{language}</span>
           ))}
         </div>
       )}
-      <WhatsAppButton message={course.whatsappMessage}>{course.cta}</WhatsAppButton>
+      <div className="course-actions">
+        <WhatsAppButton message={course.whatsappMessage}>{course.cta}</WhatsAppButton>
+        <Link className="button button-secondary" href={course.page}>
+          Ver temario y detalles <span className="sr-only">de {course.title}</span>
+          <Icon name="arrow" size={19} />
+        </Link>
+      </div>
     </div>
   );
 }

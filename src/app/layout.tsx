@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { "es-PE": "/" } },
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
@@ -38,10 +38,13 @@ export const metadata: Metadata = {
     description: siteConfig.description,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title,
     description: siteConfig.description,
   },
+  ...(siteConfig.googleSiteVerification
+    ? { verification: { google: siteConfig.googleSiteVerification } }
+    : {}),
 };
 
 export const viewport: Viewport = {
